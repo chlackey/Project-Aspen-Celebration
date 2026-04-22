@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/chlackey/Downloads/index_29.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Aspen — Closing Celebration</title>
+  <link href="./index_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --dl-green: #86BC25;
+      --dl-neon: #86EB22;
+      --dl-dark: #282728;
+      --dl-gray: #E6E6E6;
+      --dl-light-bg: #F5F5F5;
+      --dl-text: #282728;
+      --dl-text-sec: #555555;
+    }
+    body { font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--dl-light-bg); color: var(--dl-text); min-height: 100vh; }
+    .top-bar { height: 5px; background: var(--dl-green); }
+
+    /* ── HEADER ── */
+    header { background: var(--dl-dark); color: white; position: relative; overflow: hidden; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; position: relative; z-index: 2; }
+    .logo-wordmark { font-size: 1.6rem; font-weight: 700; color: white; letter-spacing: -0.5px; }
+    .logo-dot { display: inline-block; width: 8px; height: 8px; background: var(--dl-green); border-radius: 50%; margin-left: 2px; vertical-align: middle; }
+    .header-tagline { font-size: 0.75rem; font-weight: 300; color: #aaa; font-style: italic; }
+    .circle-deco { position: absolute; border-radius: 50%; pointer-events: none; }
+    .circle-1 { width: 320px; height: 320px; border: 1px solid rgba(134,188,37,0.18); top: -120px; right: -60px; }
+    .circle-2 { width: 200px; height: 200px; border: 1px solid rgba(134,235,34,0.12); top: -60px; right: 60px; }
+    .circle-3 { width: 120px; height: 120px; background: rgba(134,188,37,0.07); bottom: -30px; left: 10%; border-radius: 50%; }
+
+    /* ── HERO ── */
+    .hero { position: relative; height: 380px; overflow: hidden; }
+    .hero-collage { display: flex; height: 100%; }
+    .hero-panel { position: relative; overflow: hidden; }
+    .hero-panel img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform 0.6s ease; }
+    .hero-panel:hover img { transform: scale(1.04); }
+    .hero-panel:nth-child(1) { flex: 1.1; }
+    .hero-panel:nth-child(2) { flex: 1.4; border-left: 3px solid var(--dl-green); border-right: 3px solid var(--dl-green); }
+    .hero-panel:nth-child(3) { flex: 1; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(40,39,40,0.3) 0%, rgba(40,39,40,0.72) 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      text-align: center; padding: 32px 24px; z-index: 2;
+    }
+    .hero-badge { display: inline-block; background: var(--dl-green); color: white; font-size: 0.68rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 5px 16px; border-radius: 2px; margin-bottom: 12px; }
+    .hero-title { font-size: 2.6rem; font-weight: 700; color: white; line-height: 1.1; margin-bottom: 10px; }
+    .hero-title em { color: var(--dl-neon); font-style: italic; }
+    .hero-sub { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.88); max-width: 520px; margin-bottom: 4px; }
+    .photo-captions { display: flex; background: rgba(40,39,40,0.92); position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; }
+    .photo-cap { flex: 1; text-align: center; padding: 7px 8px; font-size: 0.65rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.65); border-right: 1px solid rgba(255,255,255,0.08); }
+    .photo-cap:last-child { border-right: none; }
+    .photo-cap span { color: var(--dl-green); }
+
+    /* ── VENUE STRIP ── */
+    .venue-strip { background: var(--dl-green); color: white; text-align: center; padding: 11px 20px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; }
+    .venue-strip span { font-weight: 300; opacity: 0.92; margin-left: 8px; }
+
+    /* ── MAIN ── */
+    main { max-width: 800px; margin: 0 auto; padding: 40px 24px 60px; }
+    .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dl-green); margin-bottom: 8px; }
+    .section-title { font-size: 1.65rem; font-weight: 700; color: var(--dl-dark); margin-bottom: 6px; line-height: 1.2; }
+    .section-desc { color: var(--dl-text-sec); font-size: 0.95rem; line-height: 1.6; margin-bottom: 28px; }
+
+    /* ── CONFIG BANNER (shown when script URL not set) ── */
+    .config-banner { background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 14px 18px; margin-bottom: 24px; font-size: 0.88rem; color: #856404; display: none; }
+    .config-banner strong { display: block; margin-bottom: 4px; }
+    .config-banner code { background: rgba(0,0,0,0.07); padding: 2px 6px; border-radius: 3px; font-size: 0.82rem; }
+
+    /* ── NAME INPUT ── */
+    .name-group { margin-bottom: 28px; }
+    .name-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; color: var(--dl-dark); }
+    .name-group input { width: 100%; max-width: 380px; padding: 12px 16px; border: 2px solid var(--dl-gray); border-radius: 4px; font-family: inherit; font-size: 0.95rem; color: var(--dl-dark); outline: none; transition: border-color 0.2s; }
+    .name-group input:focus { border-color: var(--dl-green); }
+
+    /* ── DATE OPTIONS ── */
+    .date-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+    @media (max-width: 520px) { .date-grid { grid-template-columns: 1fr; } }
+    .date-option { border: 2px solid var(--dl-gray); border-radius: 6px; padding: 18px 20px; cursor: pointer; transition: border-color 0.2s, background 0.2s, box-shadow 0.2s; user-select: none; background: white; display: flex; align-items: flex-start; gap: 14px; }
+    .date-option:hover { border-color: var(--dl-green); box-shadow: 0 2px 10px rgba(134,188,37,0.18); }
+    .date-option.selected { border-color: var(--dl-green); background: #f2f9e8; }
+    .date-checkbox { width: 22px; height: 22px; border: 2px solid var(--dl-gray); border-radius: 4px; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, background 0.2s; }
+    .date-option.selected .date-checkbox { border-color: var(--dl-green); background: var(--dl-green); }
+    .check-icon { display: none; }
+    .date-option.selected .check-icon { display: block; }
+    .date-info { flex: 1; }
+    .date-day { font-size: 1.1rem; font-weight: 700; color: var(--dl-dark); line-height: 1.2; }
+    .date-detail { font-size: 0.8rem; color: var(--dl-text-sec); margin-top: 3px; }
+    .date-option.june .date-day { font-size: 0.98rem; }
+
+    /* ── SUBMIT ── */
+    .btn-submit { background: var(--dl-green); color: white; border: none; padding: 14px 36px; font-family: inherit; font-size: 1rem; font-weight: 700; border-radius: 4px; cursor: pointer; transition: background 0.2s, transform 0.1s; display: block; width: 100%; max-width: 380px; }
+    .btn-submit:hover { background: #75a521; }
+    .btn-submit:active { transform: scale(0.99); }
+    .btn-submit:disabled { background: #bbb; cursor: not-allowed; }
+    .success-msg { display: none; background: #f2f9e8; border: 2px solid var(--dl-green); border-radius: 6px; padding: 18px 22px; margin-top: 20px; font-size: 0.95rem; color: var(--dl-dark); }
+    .success-msg strong { color: var(--dl-green); }
+    .error-msg { color: #c0392b; font-size: 0.85rem; margin-top: 8px; display: none; }
+    .submit-error { background: #fdf2f2; border: 1px solid #e74c3c; border-radius: 6px; padding: 12px 16px; margin-top: 14px; font-size: 0.88rem; color: #c0392b; display: none; }
+
+    /* ── RESULTS ── */
+    .results-section { margin-top: 48px; padding-top: 36px; border-top: 2px solid var(--dl-gray); }
+    .results-loading { display: flex; align-items: center; gap: 10px; color: var(--dl-text-sec); font-size: 0.9rem; padding: 16px 0; }
+    .spinner { width: 18px; height: 18px; border: 2px solid var(--dl-gray); border-top-color: var(--dl-green); border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .result-row { margin-bottom: 22px; }
+    .result-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+    .result-label { font-weight: 600; font-size: 0.95rem; color: var(--dl-dark); }
+    .result-count { font-size: 0.85rem; color: var(--dl-text-sec); }
+    .result-bar-bg { height: 10px; background: var(--dl-gray); border-radius: 5px; overflow: hidden; margin-bottom: 8px; }
+    .result-bar-fill { height: 100%; background: var(--dl-green); border-radius: 5px; transition: width 0.7s ease; }
+    .voters-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .voter-chip { background: white; border: 1px solid var(--dl-gray); border-radius: 100px; padding: 3px 10px; font-size: 0.75rem; color: var(--dl-dark); }
+    .last-updated { font-size: 0.75rem; color: #aaa; margin-top: 20px; text-align: right; font-style: italic; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dl-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 24px 20px; font-size: 0.78rem; }
+    footer strong { color: white; }
+    .divider-green { width: 40px; height: 3px; background: var(--dl-green); margin: 14px auto; border-radius: 2px; }
+  </style>
+</head>
+<body>
+<div class="top-bar"></div>
+
+<header>
+  <div class="circle-deco circle-1"></div>
+  <div class="circle-deco circle-2"></div>
+  <div class="circle-deco circle-3"></div>
+  <div class="header-inner">
+    <div>
+      <div class="logo-wordmark">Deloitte<span class="logo-dot"></span></div>
+      <div class="header-tagline">Together makes progress</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dl-green);">Confidential</div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;">Project Aspen</div>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-collage">
+    <div class="hero-panel"><img src="file:///C:/Users/chlackey/Downloads/nyyc1.jpg" alt="NYYC Model Room"></div>
+    <div class="hero-panel"><img src="file:///C:/Users/chlackey/Downloads/nyyc2.png" alt="NYYC Great Hall"></div>
+    <div class="hero-panel"><img src="file:///C:/Users/chlackey/Downloads/nyyc3.jpg" alt="NYYC Exterior"></div>
+  </div>
+  <div class="hero-overlay">
+    <div class="hero-badge">🎉 Closing Celebration</div>
+    <h1 class="hero-title">Project <em>Aspen</em></h1>
+    <p class="hero-sub">Celebrating the successful closing of the Rowan Digital acquisition</p>
+  </div>
+  <div class="photo-captions">
+    <div class="photo-cap"><span>NYYC</span> Model Room</div>
+    <div class="photo-cap"><span>NYYC</span> The Great Hall</div>
+    <div class="photo-cap"><span>NYYC</span> 37 W. 44th Street</div>
+  </div>
+</div>
+
+<div class="venue-strip">
+  📍 New York Yacht Club — 37 West 44th Street, New York, NY
+  <span>· Est. 1844 · Beaux-Arts Landmark</span>
+</div>
+
+<main>
+  <!-- Config warning shown if APPS_SCRIPT_URL not set -->
+  <div class="config-banner" id="configBanner">
+    <strong>⚙️ Setup needed:</strong>
+    Open <code>index.html</code>, find <code>APPS_SCRIPT_URL</code> near the top of the &lt;script&gt; and paste your Google Apps Script Web App URL there.
+  </div>
+
+  <div class="section-label">Availability Poll</div>
+  <h2 class="section-title">When can you celebrate?</h2>
+  <p class="section-desc">
+    We're gathering availability to find the best date for our Project Aspen closing dinner at the New York Yacht Club.
+    Please check <strong>every date that works for you</strong> — multiple selections are welcome.
+  </p>
+
+  <div class="name-group">
+    <label for="voterName">Your Name *</label>
+    <input type="text" id="voterName" placeholder="e.g. Jane Smith" maxlength="60" autocomplete="name">
+    <div class="error-msg" id="nameError">Please enter your name before submitting.</div>
+    <div class="error-msg" id="dateError">Please select at least one date option.</div>
+  </div>
+
+  <div class="date-grid">
+    <div class="date-option" data-date="may26" onclick="toggleDate(this)">
+      <div class="date-checkbox">
+        <svg class="check-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="date-info">
+        <div class="date-day">Tuesday, May 26</div>
+        <div class="date-detail">Day after Memorial Day</div>
+      </div>
+    </div>
+    <div class="date-option" data-date="may27" onclick="toggleDate(this)">
+      <div class="date-checkbox">
+        <svg class="check-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="date-info">
+        <div class="date-day">Wednesday, May 27</div>
+        <div class="date-detail">Post–Memorial Day week</div>
+      </div>
+    </div>
+    <div class="date-option" data-date="may28" onclick="toggleDate(this)">
+      <div class="date-checkbox">
+        <svg class="check-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="date-info">
+        <div class="date-day">Thursday, May 28</div>
+        <div class="date-detail">Mid-week option</div>
+      </div>
+    </div>
+    <div class="date-option june" data-date="june" onclick="toggleDate(this)">
+      <div class="date-checkbox">
+        <svg class="check-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M2 6L5 9L10 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="date-info">
+        <div class="date-day">A date in June works better for me</div>
+        <div class="date-detail">June flexibility preferred</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-submit" id="submitBtn" onclick="submitVote()">Submit My Availability</button>
+  <div class="success-msg" id="successMsg">
+    <strong>✓ Availability recorded!</strong> Thank you — your response has been saved to our shared tracker. Results are updated below.
+  </div>
+  <div class="submit-error" id="submitError"></div>
+
+  <!-- LIVE RESULTS -->
+  <div class="results-section">
+    <div class="section-label">Live Results</div>
+    <h3 class="section-title" style="font-size:1.3rem;">Current Availability</h3>
+    <p style="color:var(--dl-text-sec);font-size:0.88rem;margin-bottom:24px;">Pulling live from our shared tracker — updates automatically.</p>
+    <div id="resultsContainer"><p style="color:#aaa;font-size:0.88rem;">Results will appear once responses have been submitted.</p></div>
+    <div class="last-updated" id="lastUpdated"></div>
+  </div>
+</main>
+
+<footer>
+  <strong>Deloitte</strong> · Project Aspen · Rowan Digital Acquisition Closing Celebration<br>
+  <div class="divider-green"></div>
+  New York Yacht Club · 37 West 44th Street, New York, NY 10036<br>
+  This page is for internal coordination only. <em>Together makes progress.</em>
+</footer>
+
+<script>
+  const FORM_SUBMIT_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3DHrMY0Kda1GVbU3vp-e-5aB0zDoIe3HW7Yt0MV43PAoJ5A/formResponse";
+  const NAME_FIELD      = "entry.2137697924";
+  const DATE_FIELD      = "entry.1840353682";
+  const CSV_URL         = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4HAxYL0ujL-efFc47NIpxvgna29uEyEVDNnASk3uOEhjIc86o05sRY8m2GMD6vjVDVa-osLvZFBzf/pub?gid=0&single=true&output=csv";
+  const MY_VOTE_KEY     = "aspen_my_vote";
+
+  const DATE_KEYS   = ["may26", "may27", "may28", "june"];
+
+  // Labels shown on the website
+  const DATE_LABELS = {
+    may26: "Tuesday, May 26",
+    may27: "Wednesday, May 27",
+    may28: "Thursday, May 28",
+    june:  "A date in June works better"
+  };
+
+  // MUST match exactly what is in Google Form
+  const DATE_VALUES = {
+    may26: "Tuesday, May 26th",
+    may27: "Wednesday, May 27th",
+    may28: "Thursday, May 28th",
+    june:  "A date in June works better"
+  };
+
+  function toggleDate(el) { el.classList.toggle("selected"); }
+
+  // ── Remember this user's vote so it persists on refresh ──────
+  function saveMyVote(name, selected) {
+    try { localStorage.setItem(MY_VOTE_KEY, JSON.stringify({ name, selected })); } catch(e) {}
+  }
+
+  function restoreMyVote() {
+    try {
+      const raw = localStorage.getItem(MY_VOTE_KEY);
+      if (!raw) return;
+      const { name, selected } = JSON.parse(raw);
+      document.getElementById("voterName").value = name;
+      selected.forEach(k => {
+        const el = document.querySelector(".date-option[data-date=\"" + k + "\"]");
+        if (el) el.classList.add("selected");
+      });
+      const msg = document.getElementById("successMsg");
+      msg.innerHTML = "<strong>✓ Your availability is saved.</strong> You can update your selections and resubmit anytime.";
+      msg.style.display = "block";
+    } catch(e) {}
+  }
+
+  // ── Submit silently to Google Form via hidden iframe ──────────
+  function submitToForm(name, selected) {
+    return new Promise((resolve) => {
+      const iframe = document.createElement("iframe");
+      iframe.name = "hf_" + Date.now();
+      iframe.style.display = "none";
+      document.body.appendChild(iframe);
+
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action = FORM_SUBMIT_URL;
+      form.target = iframe.name;
+
+      const addField = (n, v) => {
+        const inp = document.createElement("input");
+        inp.type = "hidden"; inp.name = n; inp.value = v;
+        form.appendChild(inp);
+      };
+
+      addField(NAME_FIELD, name);
+      selected.forEach(k => addField(DATE_FIELD, DATE_VALUES[k]));
+
+      document.body.appendChild(form);
+      form.submit();
+
+      setTimeout(() => {
+        try { document.body.removeChild(form); document.body.removeChild(iframe); } catch(e) {}
+        resolve();
+      }, 3000);
+    });
+  }
+
+  // ── Parse CSV — columns: Timestamp,Name,Date_May26,Date_May27,Date_May28,Date_June,IP ──
+  function parseCSV(csv) {
+    const lines = csv.trim().split("\n");
+    if (lines.length < 2) return { may26:[], may27:[], may28:[], june:[] };
+
+    const headers  = splitCSVRow(lines[0]).map(h => h.trim().toLowerCase());
+    const nameCol  = headers.findIndex(h => h === "name");
+    const may26Col = headers.findIndex(h => h === "date_may26");
+    const may27Col = headers.findIndex(h => h === "date_may27");
+    const may28Col = headers.findIndex(h => h === "date_may28");
+    const juneCol  = headers.findIndex(h => h === "date_june");
+
+    console.log("Headers:", headers);
+    console.log("Cols — name:", nameCol, "may26:", may26Col, "may27:", may27Col, "may28:", may28Col, "june:", juneCol);
+
+    // Deduplicate: latest row per name wins
+    const nameMap = {};
+    for (let i = 1; i < lines.length; i++) {
+      const cols = splitCSVRow(lines[i]);
+      const name = nameCol >= 0 ? (cols[nameCol] || "").trim() : "";
+      if (!name) continue;
+      nameMap[name.toLowerCase()] = { name, cols };
+    }
+
+    const votes = { may26:[], may27:[], may28:[], june:[] };
+    Object.values(nameMap).forEach(({ name, cols }) => {
+      const get = (col) => col >= 0 ? (cols[col] || "").trim() : "";
+      if (get(may26Col)) votes.may26.push(name);
+      if (get(may27Col)) votes.may27.push(name);
+      if (get(may28Col)) votes.may28.push(name);
+      if (get(juneCol))  votes.june.push(name);
+    });
+
+    return votes;
+  }
+
+  function splitCSVRow(row) {
+    const result = [];
+    let cur = "", inQuote = false;
+    for (let i = 0; i < row.length; i++) {
+      const ch = row[i];
+      if (ch === '"') { inQuote = !inQuote; }
+      else if (ch === "," && !inQuote) { result.push(cur.trim()); cur = ""; }
+      else { cur += ch; }
+    }
+    result.push(cur.trim());
+    return result;
+  }
+
+  // ── Load results from published Google Sheet CSV ──────────────
+  async function loadResults() {
+    try {
+      const resp = await fetch(CSV_URL + "&t=" + Date.now());
+      if (!resp.ok) throw new Error("HTTP " + resp.status);
+      const csv = await resp.text();
+      renderResults(parseCSV(csv));
+    } catch(e) {
+      console.warn("Could not load results:", e);
+      document.getElementById("resultsContainer").innerHTML =
+        "<p style=\"color:#aaa;font-size:0.88rem;\">Results will appear once responses have been submitted.</p>";
+    }
+  }
+
+  // ── Submit vote ───────────────────────────────────────────────
+  async function submitVote() {
+    const nameEl  = document.getElementById("voterName");
+    const nameErr = document.getElementById("nameError");
+    const dateErr = document.getElementById("dateError");
+    const errBox  = document.getElementById("submitError");
+    const name    = nameEl.value.trim();
+
+    nameErr.style.display = "none";
+    dateErr.style.display = "none";
+    errBox.style.display  = "none";
+
+    if (!name) { nameErr.style.display = "block"; nameEl.focus(); return; }
+
+    const selected = [...document.querySelectorAll(".date-option.selected")].map(el => el.dataset.date);
+    if (selected.length === 0) { dateErr.style.display = "block"; return; }
+
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true; btn.textContent = "Saving…";
+
+    await submitToForm(name, selected);
+    saveMyVote(name, selected);
+
+    document.getElementById("successMsg").innerHTML =
+      "<strong>✓ Availability recorded!</strong> Thank you — your response has been saved. Results are updated below.";
+    document.getElementById("successMsg").style.display = "block";
+    btn.textContent = "Update My Availability";
+    btn.disabled = false;
+
+    setTimeout(loadResults, 3500);
+    window.scrollTo({ top: document.getElementById("resultsContainer").offsetTop - 80, behavior: "smooth" });
+  }
+
+  // ── Render results ────────────────────────────────────────────
+  function renderResults(votes) {
+    const container = document.getElementById("resultsContainer");
+    const maxVotes  = Math.max(1, ...DATE_KEYS.map(k => (votes[k] || []).length));
+    const total     = new Set([...Object.values(votes).flat()]).size;
+
+    container.innerHTML = DATE_KEYS.map(k => {
+      const voters = votes[k] || [];
+      const pct    = Math.round((voters.length / maxVotes) * 100);
+      const chips  = voters.map(v => "<span class=\"voter-chip\">" + esc(v) + "</span>").join("");
+      return "<div class=\"result-row\">" +
+        "<div class=\"result-header\">" +
+          "<span class=\"result-label\">" + DATE_LABELS[k] + "</span>" +
+          "<span class=\"result-count\">" + voters.length + " " + (voters.length === 1 ? "person" : "people") + "</span>" +
+        "</div>" +
+        "<div class=\"result-bar-bg\"><div class=\"result-bar-fill\" style=\"width:" + pct + "%\"></div></div>" +
+        "<div class=\"voters-grid\">" + (chips || "<span style=\"color:#aaa;font-size:0.78rem;font-style:italic;\">No responses yet</span>") + "</div>" +
+        "</div>";
+    }).join("") +
+    "<p style=\"font-size:0.8rem;color:#aaa;margin-top:12px;\">" + total + " " + (total === 1 ? "person has" : "people have") + " responded</p>";
+
+    const now = new Date();
+    document.getElementById("lastUpdated").textContent =
+      "Last updated: " + now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  }
+
+  function esc(s) { return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  restoreMyVote();
+  loadResults();
+  setInterval(loadResults, 30000);
+</script>
+
+</body></html>
